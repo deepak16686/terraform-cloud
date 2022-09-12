@@ -1,0 +1,5 @@
+resource "aws_alb" "alb" {
+  name            = "terraform-example-alb"
+  security_groups = ["${aws_security_group.security-group.id}"]
+  subnets         = ["${aws_subnet.dev-subnet1.id}"]
+}

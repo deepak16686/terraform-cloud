@@ -1,0 +1,10 @@
+resource "aws_instance" "dev-instance1" {
+  ami           = "ami-090fa75af13c156b4"
+  count         = 2
+  instance_type = "t2.micro"
+  key_name      = "simple-stack-key"
+  subnet_id     = aws_subnet.dev-subnet1.id
+  tags = {
+    Name = "dev-instance1"
+  }
+}
